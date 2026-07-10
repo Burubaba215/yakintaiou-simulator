@@ -56,7 +56,9 @@ function buildHandoverText() {
 function buildSpeechText() {
   return buildHandoverText()
     .replaceAll("夜間帯", "夜間たい")
-    .replaceAll("夜勤帯", "やきんたい");
+    .replaceAll("夜勤帯", "やきんたい")
+    .replaceAll("650ml", "ろっぴゃくごじゅうみりりっとる")
+    .replaceAll("650mL", "ろっぴゃくごじゅうみりりっとる");
 }
 
 function shuffleOptions(items) {
