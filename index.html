@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>申し送りシミュレーター（介護）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">介護新人研修ミニアプリ</p>
+      <h1>夜勤申し送り<br><span>対応判断トレーニング</span></h1>
+      <p class="lead">5名の入居者さんの申し送りを確認し、夜勤入りで必要な対応を選びます。</p>
+      <div class="shiftMeta" aria-label="研修情報">
+        <span>夜勤入り</span>
+        <span>5名分</span>
+        <span>音声確認</span>
+      </div>
+    </section>
+
+    <section class="panel" id="startPanel">
+      <h2>研修の流れ</h2>
+      <ol>
+        <li>「申し送りを聞く」を押す</li>
+        <li>音声または文章で5名分の情報を確認</li>
+        <li>各入居者に必要な対応を選択</li>
+        <li>採点と解説で振り返る</li>
+      </ol>
+      <button id="startBtn" class="primary">申し送りを聞く</button>
+    </section>
+
+    <section class="panel hidden" id="handoverPanel">
+      <h2>申し送り</h2>
+      <div class="audioBox">
+        <button id="speakBtn">音声で再生</button>
+        <button id="stopBtn">停止</button>
+      </div>
+      <p class="hint">夜勤前の確認メモとして、状態変化・生活情報・注意点を拾ってください。</p>
+      <p id="handoverText" class="handover"></p>
+      <button id="quizBtn" class="primary">対応を選ぶ</button>
+    </section>
+
+    <section class="panel hidden" id="quizPanel">
+      <h2>対応選択</h2>
+      <p class="hint">それぞれの入居者に必要な対応を1つ選んでください。</p>
+      <form id="quizForm"></form>
+      <button id="submitBtn" class="primary">採点する</button>
+    </section>
+
+    <section class="panel hidden" id="resultPanel">
+      <h2>結果</h2>
+      <div id="score" class="score"></div>
+      <div id="feedback"></div>
+      <button id="retryBtn" class="primary">もう一度</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
